@@ -23,7 +23,7 @@ public class MainActivity extends ActionBarActivity {
     };
     String[] movie_titles;
     String[] movie_ratings;
-
+    MovieAdapter adapter;
 
 
     @Override
@@ -34,6 +34,20 @@ public class MainActivity extends ActionBarActivity {
         listView = (ListView) findViewById(R.id.list_view);
         movie_ratings = getResources().getStringArray(R.array.movie_ratings);
         movie_titles = getResources().getStringArray(R.array.movie_titles);
+        int i=0;
+        adapter = new MovieAdapter(getApplicationContext(), R.layout.row_layout);
+        listView.setAdapter(adapter);
+        for (String titles : movie_titles)
+        {
+            MovieDataProvider dataProvider = new MovieDataProvider(
+                    movie_poster_resource[i],
+                    titles,
+                    movie_ratings[i]
+            );
+            adapter.add(dataProvider);
+            i++;
+
+        }
 
     }
 
