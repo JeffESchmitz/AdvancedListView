@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AdvancedListView</string>
+    <string name="app_name">Top 10 Movies</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
